@@ -1,7 +1,6 @@
 import sys
 import os
 
-# This tells Python to look in the current folder for your modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # 1. IMPORT the service function here
@@ -19,6 +18,7 @@ def main_menu():
     
     choice = input("Select an option: ")
     
+    
     if choice == '1':
         items = repo.get_all()
         if not items:
@@ -31,13 +31,13 @@ def main_menu():
         details = fetch_from_openfoodfacts(barcode)
         
         if details:
-            try:gcd
+            try:
                 price = float(input("Enter Price: "))
                 stock = int(input("Enter Stock: "))
-                # We use 'Product' here to match our Model
                 p = Product(barcode=barcode, price=price, stock=stock, **details)
                 repo.add(p)
                 print("Product Added Successfully!")
+            
             except ValueError:
                 print("Invalid input for price or stock.")
         else:
@@ -52,6 +52,7 @@ def main_menu():
 
     elif choice == '4':
         sys.exit()
+
 
 if __name__ == "__main__":
     while True:
