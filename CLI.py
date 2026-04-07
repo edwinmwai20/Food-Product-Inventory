@@ -3,7 +3,6 @@ import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# 1. IMPORT the service function here
 from authentication.Models.repo import InventoryRepo 
 from authentication.Models.class_file import Product 
 from authentication.services.ser import fetch_from_openfoodfacts

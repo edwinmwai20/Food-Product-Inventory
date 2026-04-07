@@ -9,7 +9,6 @@ class InventoryRepo:
         return product
 
     def get_all(self):
-        # Uses .is_deleted to match the Product class
         return [p.to_dict() for p in self.store.values() if not p.is_deleted]
 
     def get_by_id(self, p_id):

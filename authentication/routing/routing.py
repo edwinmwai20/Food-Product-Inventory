@@ -11,7 +11,6 @@ def get_inventory():
 @app.route('/inventory', methods=['POST'])
 def add_item():
     data = request.json
-    # Logic: Use the service here if only barcode is provided
     new_prod = Product(**data) 
     repo.add(new_prod)
     return jsonify(new_prod.to_dict()), 201

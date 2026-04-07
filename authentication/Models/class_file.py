@@ -4,10 +4,10 @@ class Product:
         self.barcode = barcode
         self.product_name = product_name
         self.brand = brand
-        self.ingredients = ingredients # Fixed typo 'ingredientS'
+        self.ingredients = ingredients 
         self.price = price
         self.stock = stock
-        self.is_deleted = False # Standardized name
+        self.is_deleted = False
 
     def to_dict(self):
         return {
